@@ -5,7 +5,9 @@
 
 <div class="content">
 
+  @include('responce')
     <div class="row">
+
         <div class="col-md-12">
 
             <form action="{{ route('admin.device.store') }}" method="POST" enctype="multipart/form-data">
@@ -19,7 +21,7 @@
                     <label class="col-sm-2 col-form-label" for="input-current-password">Device name</label>
                     <div class="col-sm-7">
                         <div class="form-group bmd-form-group">
-                            <input class="form-control" input="" type="text" name="name" id="input-current-password" placeholder="Devce name" value="" required="">
+                            <input class="form-control" input="" type="text" name="name" id="input-current-password" placeholder="Devce name"  required>
                         </div>
                     </div>
                 </div>

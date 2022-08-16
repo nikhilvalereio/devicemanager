@@ -4,7 +4,7 @@
 
 
 <div class="content">
-
+    @include('responce')
     <div class="row">
         <div class="col-md-12">
 
@@ -88,8 +88,6 @@
 
 
 
-
-
                 <div class="row">
                     <label class="col-sm-2 col-form-label" for="name">description</label>
                     <div class="col-sm-7">
@@ -100,9 +98,15 @@
                 </div>
 
 
+                <div class="row">
+                    <label class="col-sm-2 col-form-label" for="name">Image</label>
+                <div class="col-sm-2">
+
+                    <img src="{{@url('/Employeeimage/'.$employee->image )}}"class="img-fluid" style="max-width: 100%; height: auto;">
+                </div>
 
 
-
+                </div>
 
 
 

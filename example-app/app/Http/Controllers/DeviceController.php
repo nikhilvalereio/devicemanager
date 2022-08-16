@@ -56,9 +56,15 @@ class DeviceController extends Controller
      */
     public function store(Request $request)
     {
-    //     request()->validate([
-    //         'profile_image' => 'required|image|mimes:jpeg|max:2048',
-    //    ]);
+
+
+
+
+        request()->validate([
+            'name' => 'required',
+
+            'file' => 'required',
+       ]);
        if ($files = $request->file('file')) {
        // Define upload path
            $destinationPath = public_path('/Deviceimage/'); // upload path
@@ -74,7 +80,7 @@ class DeviceController extends Controller
             "image"=> $name_ext,
             "description"=> $request->description,
         ]);
-        return Redirect::back()->withErrors(['msg', 'One device added']);
+        return redirect()->back()->with('message', 'Saved');
     }
 
     /**
@@ -111,25 +117,39 @@ class DeviceController extends Controller
     {
 
 
-    //     request()->validate([
-    //         'profile_image' => 'required|image|mimes:jpeg|max:2048',
-    //    ]);
+        request()->validate([
+            'profile_image' => 'required|image|mimes:jpeg|max:2048',
+       ]);
        if ($files = $request->file('file')) {
        // Define upload path
            $destinationPath = public_path('/Deviceimage/'); // upload path
         // Upload Orginal Image
            $name_ext = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $name_ext);
+           Device::where('id', $device->id)
+           ->update([
+
+
+               "name"=> $request->name,
+               "device" => $request->device ,
+               "os"=>  $request->os,
+               "imei"=> $request->imei,
+               "image"=> $name_ext,
+               "description"=> $request->description,
+
+
+
+           ]);
         }
         Device::where('id', $device->id)
         ->update([
-
+            "image"=> $name_ext,
 
             "name"=> $request->name,
             "device" => $request->device ,
             "os"=>  $request->os,
             "imei"=> $request->imei,
-            "image"=> $name_ext,
+
             "description"=> $request->description,
 
 

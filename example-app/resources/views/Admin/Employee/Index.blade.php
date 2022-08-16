@@ -1,6 +1,6 @@
 @extends('layouts.page_templates.auth', ['activePage' => 'profile', 'titlePage' => __('Add device')])
 @section('content')
-
+@include('responce')
 
 
 <div class="content">
@@ -18,7 +18,7 @@
     <a href="{{ route('admin.employee.create') }}" class="btn btn-sm btn-primary">Add employee</a>
     </div>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive p-4">
         <table class="table" id="data-table">
             <thead class=" text-primary">
 

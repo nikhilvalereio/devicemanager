@@ -57,6 +57,15 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
 
+        request()->validate([
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required',
+            'phone' => 'required',
+            'designations' => 'required'
+
+       ]);
+
+
         if ($files = $request->file('file')) {
             // Define upload path
                 $destinationPath = public_path('/Employeeimage/'); // upload path
@@ -81,7 +90,7 @@ class EmployeeController extends Controller
 
 
 
-            return Redirect::back()->withErrors(['msg', 'One employee added']);
+            return redirect()->back()->with('message', 'Saved');
 
 
     }
@@ -126,6 +135,22 @@ class EmployeeController extends Controller
              // Upload Orginal Image
                 $name_ext = date('YmdHis') . "." . $files->getClientOriginalExtension();
                 $files->move($destinationPath, $name_ext);
+                Employee::where('id', $employee->id)
+                ->update([
+
+
+                    "name"=>$request->name,
+                    "phone"=>$request->phone,
+                    "alternative"=>$request->alternative,
+                    "email"=>$request->email,
+                    "address"=>$request->address,
+                    "image"=> $name_ext,
+                    "designations"=>$request->designations,
+
+
+
+                ]);
+                return redirect()->back()->with('message', 'Saved');
              }
 
 
@@ -138,13 +163,13 @@ class EmployeeController extends Controller
         "alternative"=>$request->alternative,
         "email"=>$request->email,
         "address"=>$request->address,
-        "image"=> $name_ext,
+
         "designations"=>$request->designations,
 
 
 
     ]);
-    return Redirect::back()->withErrors(['msg', 'Updated']);
+    return redirect()->back()->with('message', 'Saved');
 
     }
 
