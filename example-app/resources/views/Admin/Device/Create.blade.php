@@ -21,7 +21,7 @@
                     <label class="col-sm-2 col-form-label" for="input-current-password">Device name</label>
                     <div class="col-sm-7">
                         <div class="form-group bmd-form-group">
-                            <input class="form-control" input="" type="text" name="name" id="input-current-password" placeholder="Devce name"  required>
+                            <input class="form-control" input="" type="text" name="name" id="input-current-password" value="{{old('name')}}" required>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                     <label class="col-sm-2 col-form-label" for="name">Device IMEI Number </label>
                     <div class="col-sm-7">
                         <div class="form-group bmd-form-group">
-                            <input class="form-control" name="imei" id="imei" type="text" placeholder="Device IMEI Number">
+                            <input class="form-control" name="imei"  value="{{old('imei')}}" id="imei" type="text" placeholder="Device IMEI Number">
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
 
                     <div class="form-group">
 
-                        <textarea class="form-control" id="textarea" name="description" rows="3"></textarea>
+                        <textarea class="form-control" id="textarea" name="description" rows="3">{{old('description')}}</textarea>
                       </div>
                     </div>
                 </div>

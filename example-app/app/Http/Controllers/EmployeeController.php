@@ -90,8 +90,7 @@ class EmployeeController extends Controller
 
 
 
-            return redirect()->back()->with('message', 'Saved');
-
+            return redirect()->route('admin.employee.index')->with('message', 'Saived');
 
     }
 
@@ -150,7 +149,7 @@ class EmployeeController extends Controller
 
 
                 ]);
-                return redirect()->back()->with('message', 'Saved');
+                return redirect()->route('admin.employee.index')->with('message', 'Saived');
              }
 
 
@@ -169,7 +168,7 @@ class EmployeeController extends Controller
 
 
     ]);
-    return redirect()->back()->with('message', 'Saved');
+    return redirect()->route('admin.employee.index')->with('message', 'Saived');
 
     }
 

@@ -80,7 +80,7 @@ class DeviceController extends Controller
             "image"=> $name_ext,
             "description"=> $request->description,
         ]);
-        return redirect()->back()->with('message', 'Saved');
+        return redirect()->route('admin.device.index')->with('message', 'Saived');
     }
 
     /**
@@ -118,7 +118,7 @@ class DeviceController extends Controller
 
 
         request()->validate([
-            'profile_image' => 'required|image|mimes:jpeg|max:2048',
+            'file' => 'required|image|mimes:jpeg|max:2048',
        ]);
        if ($files = $request->file('file')) {
        // Define upload path
@@ -155,7 +155,8 @@ class DeviceController extends Controller
 
 
         ]);
-        return Redirect::back()->withErrors(['msg', 'Updated']);
+
+        return redirect()->route('admin.device.index')->with('message', 'Saived');
 
 
 

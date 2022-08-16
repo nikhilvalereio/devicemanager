@@ -27,7 +27,7 @@
                     <label class="col-sm-2 col-form-label" for="input-current-password"> Name</label>
                     <div class="col-sm-7">
                         <div class="form-group bmd-form-group">
-                            <input class="form-control" input="" type="text" name="name" id="input-current-password" placeholder="Name"  required maxlength="30">
+                            <input class="form-control" input="" type="text" name="name" value="{{old('name')}}" id="input-current-password"  required maxlength="30">
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <label class="col-sm-2 col-form-label" for="input-current-password">  Mobile number</label>
                     <div class="col-sm-7">
                         <div class="form-group bmd-form-group">
-                            <input class="form-control" input="" type="text" name="phone" id="input-current-password" placeholder=""  required maxlength="10">
+                            <input class="form-control" input="" type="number" name="phone"  value="{{old('phone')}}"id="input-current-password"  required maxlength="10">
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <label class="col-sm-2 col-form-label" for="input-current-password"> Alternative Number</label>
                     <div class="col-sm-7">
                         <div class="form-group bmd-form-group">
-                            <input class="form-control" input="" type="text" name="alternative" id="input-current-password" placeholder=""  maxlength="10">
+                            <input class="form-control" input="" type="number" name="alternative"  value="{{old('alternative')}}" id="input-current-password"   maxlength="10">
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <label class="col-sm-2 col-form-label" for="email"> Email</label>
                     <div class="col-sm-7">
                         <div class="form-group bmd-form-group">
-                            <input class="form-control" input="" type="email" name="email" id="email" placeholder="name@gmail.com"  required >
+                            <input class="form-control" input="" type="email" name="email" value="{{old('email')}}" id="email"    required >
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
 
                     <div class="form-group">
 
-                        <textarea class="form-control" id="textarea" name="address"  required maxlength="100" rows="3"></textarea>
+                        <textarea class="form-control" id="textarea" name="address"  required maxlength="100" rows="3">{{old('address')}}</textarea>
                       </div>
                     </div>
                 </div>
