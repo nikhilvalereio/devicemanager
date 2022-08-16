@@ -13,11 +13,15 @@ Route::post('login', [AdminController::class, 'login'])->name("let.login");
 #Middleware
 
     Route::group(['prefix' => 'admin', 'as'=>'admin.'], function(){
-        Route::resource('device', 'App\Http\Controllers\DeviceController');
-        Route::resource('employee', 'App\Http\Controllers\EmployeeController');
+        #Costum
+        Route::get('home', [AdminController::class, 'home'])->name('home');
+        Route::any('list', [App\Http\Controllers\EmployeeController::class, 'list'])->name('list');
 
-         #Costum
-       Route::get('home', [AdminController::class, 'home'])->name('home');
+        Route::resource('employee', 'App\Http\Controllers\EmployeeController');
+        Route::resource('device', 'App\Http\Controllers\DeviceController');
+
+
+
 
 
 

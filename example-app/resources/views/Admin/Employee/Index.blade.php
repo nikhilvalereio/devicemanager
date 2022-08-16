@@ -1,6 +1,6 @@
-@extends('layouts.page_templates.auth', ['activePage' => 'profile', 'titlePage' => "Employee"])
-
+@extends('layouts.page_templates.auth', ['activePage' => 'profile', 'titlePage' => __('Add device')])
 @section('content')
+
 
 
 <div class="content">
@@ -10,7 +10,7 @@
     <div class="card">
     <div class="card-header card-header-primary">
     <h4 class="card-title ">Employee</h4>
-    <p class="card-category"> Here you can manage users</p>
+
     </div>
     <div class="card-body">
     <div class="row">

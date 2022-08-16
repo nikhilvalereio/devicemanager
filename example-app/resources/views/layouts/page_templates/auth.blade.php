@@ -60,4 +60,6 @@
         <script src="{{asset('material/assets/js/settings.js')}}"></script>
         @stack('js')
 
+        @yield('javascript')
+
 

@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h4 class="card-title ">Device</h4>
-                    <p class="card-category"> Here you can manage Device</p>
+
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -42,8 +42,7 @@
     @endsection
 @section('javascript')
 <script type="text/javascript">
-    $(function() {
-
+    $( document ).ready(function() {
         var table = $('#data-table').DataTable({
             processing: true,
             serverSide: true,

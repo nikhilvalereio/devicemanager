@@ -13,7 +13,7 @@
 
 
 
-            <form action="{{ route('employee.update', $employee->id ) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.employee.update', $employee->id ) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 

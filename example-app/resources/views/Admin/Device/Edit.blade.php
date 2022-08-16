@@ -10,7 +10,7 @@
 
 
 
-                <form action="{{ route('device.update', $device->id ) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.device.update', $device->id ) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 

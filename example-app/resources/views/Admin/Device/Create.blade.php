@@ -116,10 +116,6 @@
                 $("#os").hide();
             });
 
-
-
-
-
             </script>
 
         @endsection

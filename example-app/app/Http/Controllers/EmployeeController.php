@@ -158,4 +158,21 @@ class EmployeeController extends Controller
     {
         //
     }
+
+
+    public function list()
+    {
+
+        $data = Employee::select('*');
+        return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+
+                       $btn = '<a href="employee/'.$row->id.'/edit" class="edit btn btn-primary btn-sm">Edit</a>';
+
+                        return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+    }
 }
